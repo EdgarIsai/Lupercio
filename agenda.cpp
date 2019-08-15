@@ -5,7 +5,7 @@
 using namespace std;
 
 struct Agenda {
-    char id;
+    int id;
     char nombre[30];
     char direccion[30];
     char telefono[10];
@@ -84,7 +84,7 @@ int main()
 
             case 4:
                 // Remover
-                cout << "Cual qiueres borrar" << endl;
+                cout << "Que id quieres borrar?" << endl;
                 cin >> posicion;
                 posicion = buscar(posicion);
                     for (int i=posicion; i<index; i++) {
