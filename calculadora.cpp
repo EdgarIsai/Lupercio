@@ -10,8 +10,31 @@ int *resta (int*,int*);
 int *multiplicacion (int*,int*);
 int *division (int*,int*);
 
+
+int *calculadora(int *ptr1, int *ptr2, int opcion){
+        int *r = (int*) malloc(sizeof(int));
+        switch(opcion) {
+            case 1:
+                *r = (*ptr1)+(*ptr2);
+                cout << "La suma es: " << *r << endl;
+                break;
+            case 2:
+                *r = (*ptr1)-(*ptr2);
+                cout << "La suma es: " << *r << endl; break;
+            case 3:
+                *r = (*ptr1)*(*ptr2);
+                cout << "La suma es: " << *r << endl; break;
+            case 4:
+                *r = (*ptr1)/(*ptr2);
+                cout << "La suma es: " << *r << endl; break;
+    }
+    return 0;
+}
+
+
 int main()
 {
+
     int opc=0;
     do {
         system("cls");
@@ -30,41 +53,11 @@ int main()
 
         ptr1 =& n1;
         ptr2 =& n2;
-        switch(opc) {
-            case 1: cout << "La suma es: " << *suma(ptr1,ptr2) << endl; break;
-            case 2: cout << "La resta es: " << *resta(ptr1,ptr2) << endl;; break;
-            case 3: cout << "La multiplicacion es: " << *multiplicacion(ptr1,ptr2) << endl;; break;
-            case 4: cout << "La division es: " << *division(ptr1,ptr2) << endl;; break;
-        }
+        *calculadora(ptr1, ptr2, opc);
         cout << "Continuar [1] Salir[2]" <<endl;
         cin >> opc;
     } while(opc!=2);
     system("pause");
     return 0;
 }
-
-int *suma(int *n1, int *n2){
-    int *r = (int*) malloc(sizeof(int));
-    *r = (*n1)+(*n2);
-    return r;
-}
-
-int *resta(int *n1, int *n2){
-    int *r = (int*) malloc(sizeof(int));
-    *r = (*n1)-(*n2);
-    return r;
-}
-
-int *multiplicacion(int *n1, int *n2){
-    int *r = (int*) malloc(sizeof(int));
-    *r = (*n1)*(*n2);
-    return r;
-}
-
-int *division(int *n1, int *n2){
-    int *r = (int*) malloc(sizeof(int));
-    *r = (*n1)/(*n2);
-    return r;
-}
-
 
