@@ -17,10 +17,7 @@ int *fibonacci(int *opc) {
     for (int i=0; i < *opc; i++) {
         if (i == 0 || i == 1) {
             cout << base << endl;
-        } else {
-            cout << auxiliar <<endl;
         }
-
         *r = base + auxiliar;
         // Swaps base and auxiliar
         base += auxiliar;
@@ -30,6 +27,11 @@ int *fibonacci(int *opc) {
         *r += auxiliar;
         auxiliar = *r - auxiliar;
         *r -= auxiliar;
+        
+        if (i != 0 || i != 1) {
+            cout << auxiliar <<endl;
+        }
+
     }
     return 0;
 }
