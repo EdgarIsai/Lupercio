@@ -92,6 +92,27 @@ int *decimalToBin(int *number) {
     return 0;
 }
 
+int *decimalHexa(int *number) {
+    int remainder, position=0, lenght=*number, extra=0;
+    string hex[7] = {"A", "B", "C", "D", "E", "F"};
+    string result[100];
+    while(lenght) {
+        remainder = lenght % 16;
+        if (remainder >=10 && remainder <=15) {
+            extra = remainder - 10;
+            result[position] = hex[extra];
+        } else {
+            result[position] = to_string(remainder);
+        }
+        lenght /= 16;
+        position++;
+    }
+
+    for (;position>=0; position--)
+        cout << result[position];
+
+}
+
 int *binaryToDecimal(int *number) {
     int position=0, res=0, last=0, lenght=*number, power=2, *powPoint;
     powPoint =& power;
@@ -123,6 +144,7 @@ int main()
     int *num, user_num;
     cin>>user_num;
     num =& user_num;
-    *octalDecimal(num);
+    *decimalHexa(num);
     return 0;
 }
+
