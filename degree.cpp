@@ -48,6 +48,9 @@ void menu() {
             system("pause");
             break;
 
+        case 5:
+            exit(0);
+
         default:
             cout << "Opcion invalida" << endl;
             system("pause");
