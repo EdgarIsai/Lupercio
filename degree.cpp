@@ -1,5 +1,6 @@
 #include <iostream>
 #include "degree.h"
+#include <cstdlib>
 using namespace std;
 
 void menu() {
@@ -14,7 +15,9 @@ void menu() {
     cout << "2) K - C:" << endl;
     cout << "3) C - F:" << endl;
     cout << "4) F - C:" << endl;
-    cout << "5) Quit" << endl;
+    cout << "5) F - K:" << endl;
+    cout << "6) K - F:" << endl;
+    cout << "7) Quit" << endl;
     cout << "Choose an option" << endl;
 
     cin >> choice;
@@ -49,6 +52,20 @@ void menu() {
             break;
 
         case 5:
+            cout << "Type your degree F: " << endl;
+            cin >> degree;
+            cout << "F-K: " << d1.getFarenheitToKelvin(degree) << endl;
+            system("pause");
+            break;
+
+        case 6:
+            cout << "Type your degree K: " << endl;
+            cin >> degree;
+            cout << "K-F: " << d1.getKelvinToFarenheit(degree) << endl;
+            system("pause");
+            break;
+
+        case 7:
             exit(0);
 
         default:
