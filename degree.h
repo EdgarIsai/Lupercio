@@ -23,6 +23,14 @@ class Degree {
             return (degree - 32) * 5 / 9;
         }
 
+        float getFarenheitToKelvin(float degree) {
+            return (degree - 32) * 5 / 9 + 273.15;
+        }
+
+        float getKelvinToFarenheit(float degree) {
+            return (degree - 273.15 ) * 9 / 5 + 32 ;
+        }
+
 
 };
 #endif // DEGREE_H_INCLUDED
