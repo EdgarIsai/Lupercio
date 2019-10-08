@@ -6,7 +6,7 @@ class Person {
     private:
         std::string name;
         bool ticket;
-        int luggage = rand() % 10 + 1;
+        int luggage = 0;
         std::string standp1 = "    o";
         std::string standp2 = " + /|\\ ";
         std::string standp3 = "+-+ | ";

@@ -18,3 +18,22 @@
 	<string>
 	"Person.h"
 
+1570564076 source:c:\users\usuario\downloads\lupercio-master\lupercio-master\airport\main.cpp
+	<iostream>
+	<string.h>
+	<stdio.h>
+	<conio.h>
+	<stdlib.h>
+	"person.h"
+	"queue.h"
+
+1570563276 c:\users\usuario\downloads\lupercio-master\lupercio-master\airport\person.h
+	<stdlib.h>
+
+1570563290 c:\users\usuario\downloads\lupercio-master\lupercio-master\airport\queue.h
+	<stdio.h>
+	<windows.h>
+	<ctype.h>
+	<string>
+	"Person.h"
+

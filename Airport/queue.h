@@ -160,7 +160,7 @@ class Queue {
                     y = 10;
                     step += 5;
                     Sleep(100);
-                    gotoxy(step, y++); std::cout << stack[element].get_name();
+                    gotoxy(step, y++); std::cout << stack[element].get_name() << " " << stack[element].get_luggage();
                     gotoxy(step, y++); std::cout << stack[element].get_walk(1);
                     gotoxy(step, y++); std::cout << stack[element].get_walk(2);
                     gotoxy(step, y++); std::cout << stack[element].get_walk(3);
@@ -178,7 +178,7 @@ class Queue {
                     y = 10;
                     step += 5;
                     Sleep(100);
-                    gotoxy(step, y++); std::cout << stack[element].get_name();
+                    gotoxy(step, y++); std::cout << stack[element].get_name() << " " << stack[element].get_luggage();
                     gotoxy(step, y++); std::cout << stack[element].get_walk(6);
                     gotoxy(step, y++); std::cout << stack[element].get_walk(7);
                     gotoxy(step, y++); std::cout << stack[element].get_walk(8);
@@ -398,6 +398,88 @@ void get_out() {
             gotoxy(0, 0);
     }
 
+void taxi() {
+        system("cls||clear");
+        std::string taxi1 = "              .----' `-----.";
+        std::string taxi2 = "             //^^^^;;^^^^^^`\\";
+        std::string taxi3 = "     _______//_____||_____()_\\________";
+        std::string taxi4 = "    /       :      : ___              `\\";
+        std::string taxi5 = "   |>   ____;      ;  |/-\\><|   ____   _<)";
+        std::string taxi6 = "  {____/    \\_________________/    \\____}";
+        std::string taxi7 = "       \\ '' /                 \\ '' /";
+        std::string taxi8 = "        '---'                   '---'";
+
+    int x=0, y=10, finalx = 100;
+
+            gotoxy(120, y++); std::cout << taxi1;
+            gotoxy(120, y++); std::cout << taxi2;
+            gotoxy(120, y++); std::cout << taxi3;
+            gotoxy(120, y++); std::cout << taxi4;
+            gotoxy(120, y++); std::cout << taxi5;
+            gotoxy(120, y++); std::cout << taxi6;
+            gotoxy(120, y++); std::cout << taxi7;
+            gotoxy(120, y++); std::cout << taxi8;
+            y = 10;
+            for (int element=0; element <= position; element++) {
+                for (int step=0; step <= finalx;) {
+                    gotoxy(step, y++); std::cout << "        ";
+                    gotoxy(step, y++); std::cout << stack[element].get_walk(11);
+                    gotoxy(step, y++); std::cout << stack[element].get_walk(11);
+                    gotoxy(step, y++); std::cout << stack[element].get_walk(11);
+                    gotoxy(step, y++); std::cout << stack[element].get_walk(11);
+                    gotoxy(step, y++); std::cout << stack[element].get_walk(11);
+                    y = 10;
+                    step += 5;
+                    Sleep(100);
+                    gotoxy(step, y++); std::cout << stack[element].get_name();
+                    gotoxy(step, y++); std::cout << stack[element].get_walk(1);
+                    gotoxy(step, y++); std::cout << stack[element].get_walk(2);
+                    gotoxy(step, y++); std::cout << stack[element].get_walk(3);
+                    gotoxy(step, y++); std::cout << stack[element].get_walk(4);
+                    gotoxy(step, y++); std::cout << stack[element].get_walk(5);
+                    y = 10;
+                    Sleep(100);
+                    gotoxy(step, y++); std::cout << "        ";
+                    gotoxy(step, y++); std::cout << stack[element].get_walk(11);
+                    gotoxy(step, y++); std::cout << stack[element].get_walk(11);
+                    gotoxy(step, y++); std::cout << stack[element].get_walk(11);
+                    gotoxy(step, y++); std::cout << stack[element].get_walk(11);
+                    gotoxy(step, y++); std::cout << stack[element].get_walk(11);
+
+                    y = 10;
+                    step += 5;
+                    Sleep(100);
+                    if (step == 100) {
+                        gotoxy(step, y++); std::cout << "                   ";
+                        gotoxy(step, y++); std::cout << "                   ";
+                        gotoxy(step, y++); std::cout << "                   ";
+                        gotoxy(step, y++); std::cout << "                   ";
+                        gotoxy(step, y++); std::cout << "                   ";
+                        gotoxy(step, y++); std::cout << "                   ";
+                        y = 10;
+                    }
+                    gotoxy(step, y++); std::cout << stack[element].get_name();
+                    gotoxy(step, y++); std::cout << stack[element].get_walk(6);
+                    gotoxy(step, y++); std::cout << stack[element].get_walk(7);
+                    gotoxy(step, y++); std::cout << stack[element].get_walk(8);
+                    gotoxy(step, y++); std::cout << stack[element].get_walk(9);
+                    gotoxy(step, y++); std::cout << stack[element].get_walk(10);
+                    y = 10;
+
+
+                    Sleep(100);
+            }
+            gotoxy(100, y++); std::cout << "                   ";
+            gotoxy(100, y++); std::cout << "                   ";
+            gotoxy(100, y++); std::cout << "                   ";
+            gotoxy(100, y++); std::cout << "                   ";
+            gotoxy(100, y++); std::cout << "                   ";
+            gotoxy(100, y++); std::cout << "                   ";
+            y = 10;
+            };
+
+            gotoxy(0, 0);
+    }
 };
 
 #endif // STACK_H_INCLUDED

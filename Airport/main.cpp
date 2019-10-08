@@ -50,6 +50,7 @@ int main()
     Queue ticket_queue;
     Queue onboard;
     Queue flying;
+    Queue taxi;
     int tickets[30];
     int random = 0;
     int onflight = 0, passenger_number, lg = 0, flight=0, fly=0, valid_ticket=0, ticket_pos=-1, out=0;
@@ -62,7 +63,8 @@ int main()
         "2) Luggage check \n"
         "3) Get inside the airplane \n"
         "4) Fly \n"
-        "5) Fly \n";
+        "5) Get out of the plane! \n"
+        "6) Taxi! \n";
         cout << menu;
         fflush(stdout);
         opc = getch();
@@ -71,8 +73,9 @@ int main()
                 {
                     if (out == 0) {
                         cout << "How many passengers do you wish to add? ";
-                        fflush(stdin);
+                        string passengers;
                         cin >> passengers;
+                        cin.ignore();
                         bool valid = true;
                         for (int i=0; i < passengers.size(); i++) {
                             if (!isdigit(passengers[i]))
@@ -86,10 +89,11 @@ int main()
                         if (valid) {
                             passenger_number = stoi(passengers);
                             for (int i=0; i < passenger_number; i++) {
+                                system("cls||clear");
                                 Person p;
-                                cout << "Type the passenger name: ";
-                                fflush(stdin);
+                                cout << "Type the passenger name: ";;
                                 cin >> name;
+                                cin.ignore();
                                 string filtered_name = name_validation(name);
                                 p.set_name(filtered_name);
 
@@ -100,8 +104,6 @@ int main()
                                         ticket_pos++;
                                         tickets[ticket_pos] = random;
                                         valid_ticket = 1;
-                                        cout << random;
-                                        system("pause");
                                         continue;
                                     }
 
@@ -117,8 +119,6 @@ int main()
                                         ticket_pos++;
                                         tickets[ticket_pos] = random;
                                         valid_ticket = 1;
-                                        cout << random;
-                                        system("pause");
                                     }
                                 } while(!valid_ticket);
                                 p.set_luggage(random);
@@ -180,14 +180,27 @@ int main()
                     if (out == 1) {
                         flying.get_out();
                         for (int i=0; i < passenger_number; i++) {
-                            flying.remove_();
+                            Person passenger = flying.remove_();
+                            taxi.add(passenger);
                         }
                         fly = 2;
-                        out = 0;
+                        out = 5;
                         system("pause");
                     }
                     for (int i=0; i <20; i++) {
                         tickets[i] = -1;
+                    }
+                    break;
+                }
+            case '6':
+                {
+                    if (out == 5) {
+                        taxi.taxi();
+                        for (int x=0; x < passenger_number; x++) {
+                            Person passenger = taxi.remove_();
+                        }
+                        out = 0;
+
                     }
                     break;
                 }
