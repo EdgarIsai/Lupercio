@@ -1,1 +1,1 @@
-<h1>This is lupercio's activities</h1>
+<h1>These are lupercio's activities</h1>
