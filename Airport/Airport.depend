@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1570503746 source:d:\codeblocksprojects\airport\main.cpp
+	<iostream>
+	<string.h>
+	<stdio.h>
+	<conio.h>
+	<stdlib.h>
+	"person.h"
+	"queue.h"
+
+1570497478 d:\codeblocksprojects\airport\person.h
+	<stdlib.h>
+
+1570503654 d:\codeblocksprojects\airport\queue.h
+	<stdio.h>
+	<windows.h>
+	<ctype.h>
+	<string>
+	"Person.h"
+
